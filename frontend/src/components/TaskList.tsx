@@ -45,7 +45,7 @@ const TaskList: React.FC = () => {
   };
 
   return (
-    <div style={{ padding: 20 }}>
+    <div>
       <h1>TASK LIST</h1>
       <Link href="/tasks/new" style={{ marginBottom: 20, display: 'inline-block' }}>
         + Create new task

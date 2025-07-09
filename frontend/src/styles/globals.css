@@ -1,0 +1,56 @@
+.hvr-underline-reveal {
+  display: inline-block;
+  vertical-align: middle;
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  overflow: hidden;
+}
+
+.hvr-underline-reveal:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #ccc;
+  height: 4px;
+  transform: translateY(4px);
+  transition: transform 0.3s ease-out;
+}
+
+.hvr-underline-reveal:hover:before,
+.hvr-underline-reveal:focus:before,
+.hvr-underline-reveal:active:before {
+  transform: translateY(0);
+}
+
+.social-btn {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  margin: 0.25rem;
+  color: white;
+  text-decoration: none;
+  transition: filter 0.3s ease;
+}
+
+.social-btn i {
+  font-size: 1.2rem;
+}
+
+.social-btn:hover {
+  filter: brightness(110%);
+}
+
+.navbar-logo {
+  height: 32px;
+}
+
+
