@@ -42,7 +42,7 @@ const Layout = ({ children }: Props) => {
         </div>
       </nav>
 
-      <main className="container my-4" style={{ paddingTop: '70px', paddingBottom: '50px' }}>
+      <main className="container" style={{ paddingTop: '55px', paddingBottom: '50px' }}>
         {children}
       </main>
 

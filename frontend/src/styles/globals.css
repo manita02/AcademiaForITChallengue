@@ -53,4 +53,16 @@
   height: 32px;
 }
 
+.searchBarContainer {
+  width: 100vw;
+  background-image: url('/images/search-bar.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-bottom: 2px solid #000880;
+  padding: 40px 0;
+  margin-left: calc(-50vw + 50%);
+  box-shadow: inset 0px -8px 10px -2px #000880;
+}
+
 
