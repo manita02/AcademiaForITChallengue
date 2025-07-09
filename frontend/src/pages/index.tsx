@@ -1,13 +1,14 @@
-import React from 'react';
-import TaskList from '../components/TaskList';
+import { useEffect } from 'react';
+import { useRouter } from 'next/router';
 
 const Home = () => {
-  return (
-    <div>
-      <h1>Task List</h1>
-      <TaskList />
-    </div>
-  );
+  const router = useRouter();
+
+  useEffect(() => {
+    router.replace('/tasks');
+  }, [router]);
+
+  return null;
 };
 
 export default Home;
