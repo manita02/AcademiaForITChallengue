@@ -23,12 +23,8 @@ const CreateTaskPage = () => {
       }
       router.push('/tasks');
     } catch (error) {
-        if (error instanceof Error) {
-          alert(error.message);
-        } else {
-          alert('An error occurred');
-        }
-      } finally {
+        console.error('Error creating task:', error);
+    } finally {
         setLoading(false);
       }
   };

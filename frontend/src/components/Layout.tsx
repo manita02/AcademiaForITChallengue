@@ -9,7 +9,7 @@ type Props = {
 const Layout = ({ children }: Props) => {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top" id="custom-bootstrap-menu">
+      <nav className="navbar navbar-expand-lg fixed-top" id="custom-menu">
         <div className="container d-flex align-items-center">
           <a href="https://www.instagram.com/fundacionformar/?hl=es" className="me-3" target='blank'>
             <img src="/images/formar.png" alt="Formar Argentina Logo" className="navbar-logo" />
@@ -48,7 +48,7 @@ const Layout = ({ children }: Props) => {
         <CustomModal />
       </main>
 
-      <footer className="bg-light text-center text-white mt-auto fixed-bottom">
+      <footer className="text-center text-white mt-auto fixed-bottom" id="custom-footer">
         <div className="container p-2 pb-0">
           <section className="mb-2">
             <a

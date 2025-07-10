@@ -28,6 +28,14 @@
   transform: translateY(0);
 }
 
+#custom-menu{
+  background-color: #456882;
+}
+
+#custom-footer {
+  background-color: #1B3C53;
+}
+
 .social-btn {
   width: 35px;
   height: 35px;

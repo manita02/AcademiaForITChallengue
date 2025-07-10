@@ -25,8 +25,7 @@ const TaskList: React.FC = () => {
       const data = await res.json();
       setTasks(data);
     } catch (error) {
-      console.error(error);
-      alert('Error loading tasks');
+      console.error('Error loading tasks:', error);
     } finally {
       setLoading(false);
     }
@@ -44,12 +43,9 @@ const TaskList: React.FC = () => {
 
       if (res.status === 204) {
         fetchTasks();
-      } else {
-        alert('Error deleting task');
       }
     } catch (error) {
-      console.error(error);
-      alert('Error deleting task');
+      console.error('Error deleting task:', error);
     }
   };
 

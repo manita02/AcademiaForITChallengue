@@ -21,11 +21,7 @@ const EditTaskPage = () => {
         const data = await res.json();
         setTask(data);
       } catch (error) {
-        if (error instanceof Error) {
-          alert(error.message);
-        } else {
-          alert('An error occurred');
-        }
+        console.error('Error getting task:', error);
       } finally {
         setFetching(false);
       }
@@ -47,11 +43,7 @@ const EditTaskPage = () => {
 
       router.push('/tasks');
     } catch (error) {
-      if (error instanceof Error) {
-        alert(error.message);
-      } else {
-        alert('An error occurred');
-      }
+      console.error('Error updating task:', error);
     } finally {
       setLoading(false);
     }
