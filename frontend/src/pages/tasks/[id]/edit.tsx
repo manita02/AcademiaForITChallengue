@@ -61,9 +61,8 @@ const EditTaskPage = () => {
   if (!task) return <p>No task found.</p>;
 
   return (
-    <div>
-      <h1>Update task</h1>
-      <TaskForm initialTask={task} onSubmit={handleUpdate} loading={loading} />
+    <div className="formContainer">
+      <TaskForm initialTask={task} onSubmit={handleUpdate} loading={loading} formTitle="Update Task"/>
     </div>
   );
 };

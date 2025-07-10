@@ -34,9 +34,8 @@ const CreateTaskPage = () => {
   };
 
   return (
-    <div>
-      <h1>Create task</h1>
-      <TaskForm onSubmit={handleCreate} loading={loading} />
+    <div className="formContainer">
+      <TaskForm onSubmit={handleCreate} loading={loading} formTitle="Create New Task" />
     </div>
   );
 };
