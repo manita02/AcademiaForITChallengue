@@ -7,6 +7,7 @@ router.get('/', getTasks);
 router.post('/', createTask);
 router.put('/:id', updateTask);
 router.delete('/:id', deleteTask);
+router.get('/search', getTasks); 
 router.get('/:id', getTaskById);
 
 export default router;

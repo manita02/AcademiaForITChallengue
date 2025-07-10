@@ -36,7 +36,7 @@ const Layout = ({ children }: Props) => {
                 <a className="nav-link hvr-underline-reveal" href="/">HOME</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link hvr-underline-reveal" href="/tasks/new">NEW TASK</a>
+                <a className="nav-link fw-bold text-white hvr-underline-reveal" href="/tasks/new">NEW TASK</a>
               </li>
             </ul>
           </div>

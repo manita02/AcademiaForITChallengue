@@ -3,15 +3,27 @@ import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
-// GET /api/tasks
 export const getTasks: RequestHandler = async (req, res) => {
-  const tasks = await prisma.task.findMany();
+  const { title } = req.query;
+  const tasks = await prisma.task.findMany({
+    where: title
+      ? {
+          title: {
+            contains: String(title).toUpperCase(),
+          },
+        }
+      : undefined,
+    orderBy: {
+      createdAt: 'desc',
+    },
+  });
+
   res.json(tasks);
 };
 
 // POST /api/tasks
 export const createTask: RequestHandler = async (req, res) => {
-  const { title, description } = req.body;
+  const { title, description, completed } = req.body;
   const error = validateTaskInput(title, description);
   if (error) {
     res.status(400).json({ error });
@@ -19,9 +31,9 @@ export const createTask: RequestHandler = async (req, res) => {
   }
   const newTask = await prisma.task.create({
     data: {
-      title,
+      title: title.toUpperCase(),
       description,
-      completed: false,
+      completed: completed,
       createdAt: new Date()
     }
   });
@@ -42,14 +54,13 @@ export const updateTask: RequestHandler = async (req, res) => {
   const updatedTask = await prisma.task.update({
     where: { id },
     data: {
-      title: title ?? task.title,
-      description: description ?? task.description,
+      title: title.toUpperCase(),
+      description: task.description,
       completed: completed ?? task.completed
     }
   });
   res.json(updatedTask);
 };
-
 
 // DELETE /api/tasks/:id
 export const deleteTask: RequestHandler = async (req, res) => {
