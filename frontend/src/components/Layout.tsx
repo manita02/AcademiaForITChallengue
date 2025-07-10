@@ -1,4 +1,5 @@
 import React, { ReactNode } from 'react';
+import CustomModal from './CustomModal';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 type Props = {
@@ -32,18 +33,19 @@ const Layout = ({ children }: Props) => {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav ms-auto">
               <li className="nav-item">
-                <a className="nav-link hvr-underline-reveal" href="/">Home</a>
+                <a className="nav-link hvr-underline-reveal" href="/">HOME</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link hvr-underline-reveal" href="/tasks/new">New Task</a>
+                <a className="nav-link hvr-underline-reveal" href="/tasks/new">NEW TASK</a>
               </li>
             </ul>
           </div>
         </div>
       </nav>
 
-      <main className="container" style={{ paddingTop: '55px', paddingBottom: '50px' }}>
+      <main className="container" style={{ paddingTop: '55px', paddingBottom: '50px', marginBottom: '50px' }}>
         {children}
+        <CustomModal />
       </main>
 
       <footer className="bg-light text-center text-white mt-auto fixed-bottom">
@@ -100,7 +102,7 @@ const Layout = ({ children }: Props) => {
           style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}
         >
           <div className="fw-bold">© 2025 Academia ForIT</div>
-          <div className="fst-italic">Desarrollado por Ana Lucia Juarez</div>
+          <div className="fst-italic">Developed by Ana Lucia Juarez</div>
         </div>
 
       </footer>

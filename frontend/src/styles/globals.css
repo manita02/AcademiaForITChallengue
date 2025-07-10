@@ -65,4 +65,42 @@
   box-shadow: inset 0px -8px 10px -2px #000880;
 }
 
+.task-title-glitch {
+  font-size: 3rem;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  line-height: 1.2;
+  color: #fff;
+  text-shadow: 0 5px 4px rgba(0, 0, 0, 0.4), 0 -5px 5px #080035;
+  letter-spacing: -1px;
+  transition: transform 0.3s ease;
+}
+
+.task-title-glitch:hover {
+  animation: glitch 1s linear infinite;
+  cursor: pointer;
+}
+
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  80% {
+    transform: translate(2px, -2px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
 
