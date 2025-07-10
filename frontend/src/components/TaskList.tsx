@@ -10,11 +10,40 @@ const TaskList: React.FC = () => {
   const [filterStatus, setFilterStatus] = useState('all');
 
   const handleSearchClick = () => {
-    alert('Test Click');
+    if (!searchTerm.trim()) {
+      (window as any).openCustomModal({
+        title: 'Search Required',
+        body: 'Please enter a title or keyword to search.',
+        onConfirm: () => {},
+        showCancel: false
+      });
+      return;
+    }
+
+    fetchTasksByTitle(searchTerm);
   };
 
   const handleFilterChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setFilterStatus(e.target.value);
+    const value = e.target.value;
+    setFilterStatus(value);
+
+    if (value === 'all') {
+      fetchTasks();
+    }
+  };
+
+  const fetchTasksByTitle = async (title: string) => {
+    setLoading(true);
+    try {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/tasks/search?title=${encodeURIComponent(title)}`);
+      if (!res.ok) throw new Error('Error searching tasks');
+      const data = await res.json();
+      setTasks(data);
+    } catch (error) {
+      console.error('Error searching tasks:', error);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const fetchTasks = async () => {
@@ -68,7 +97,6 @@ const TaskList: React.FC = () => {
               showCancel: false
             })
           }
-          style={{ cursor: 'pointer' }}
         >
           TASK MANAGER
         </h2>
@@ -77,10 +105,16 @@ const TaskList: React.FC = () => {
             <input
               type="search"
               className="form-control"
-              placeholder="Search"
+              placeholder="Search by title"
               aria-label="Search"
               value={searchTerm}
               onChange={e => setSearchTerm(e.target.value)}
+              onKeyDown={e => {
+                if (e.key === 'Enter') {
+                  e.preventDefault();
+                  handleSearchClick();
+                }
+              }}
             />
             <button
               className="btn btn-primary"
@@ -108,7 +142,10 @@ const TaskList: React.FC = () => {
         {loading ? (
           <p>Loading tasks...</p>
         ) : filteredTasks.length === 0 ? (
-          <p>No tasks found.</p>
+          <p className="alert alert-warning text-center fw-semibold d-flex justify-content-center align-items-center gap-2">
+            <i className="bi bi-exclamation-triangle-fill"></i>
+            No tasks found.
+          </p>
         ) : (
           <div className="row">
             {filteredTasks.map(task => (
