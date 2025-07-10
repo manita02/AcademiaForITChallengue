@@ -31,10 +31,6 @@ export const createTask: RequestHandler = async (req, res) => {
 // PUT /api/tasks/:id
 export const updateTask: RequestHandler = async (req, res) => {
   const id = parseInt(req.params.id, 10);
-  if (isNaN(id)) {
-    res.status(400).json({ error: 'Invalid ID' });
-    return;
-  }
   const { title, description, completed } = req.body;
   const error = validateTaskInput(title, description);
   if (error) {
@@ -58,10 +54,6 @@ export const updateTask: RequestHandler = async (req, res) => {
 // DELETE /api/tasks/:id
 export const deleteTask: RequestHandler = async (req, res) => {
   const id = parseInt(req.params.id, 10);
-  if (isNaN(id)) {
-    res.status(400).json({ error: 'Invalid ID' });
-    return;
-  }
   const task = await findTask(id, res);
   if (!task) return;
   await prisma.task.delete({ where: { id } });
@@ -93,4 +85,10 @@ export async function findTask(id: number, res: Response) {
   return task;
 }
 
-
+export const getTaskById: RequestHandler = async (req, res) => {
+  const id = parseInt(req.params.id, 10);
+  const task = await findTask(id, res);
+  if (!task) return;
+  res.json(task);
+  return;
+};
