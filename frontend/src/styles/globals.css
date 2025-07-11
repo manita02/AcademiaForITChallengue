@@ -1,3 +1,4 @@
+/* ------- Layout.tsx styles ------- */
 .hvr-underline-reveal {
   display: inline-block;
   vertical-align: middle;
@@ -60,7 +61,9 @@
 .navbar-logo {
   height: 32px;
 }
+/* ------- END Layout.tsx styles ------- */
 
+/* ------- TaskList.tsx styles ------- */
 .searchBarContainer {
   width: 100vw;
   background-image: url('/images/search-bar.jpeg');
@@ -110,7 +113,9 @@
     transform: translate(0);
   }
 }
+/* ------- END TaskList.tsx styles ------- */
 
+/* ------- TaskForm.tsx styles ------- */
 .formContainer {
   background-image: url('/images/form-bg.jpeg');
   background-size: cover;
@@ -161,7 +166,9 @@
 .form-content .form-check-label {
   color: #fff;
 }
+/* ------- END TaskForm.tsx styles ------- */
 
+/* ------- Responsive Styles ------- */
 @media (max-width: 440px) {
   .task-title-glitch {
     font-size: 2rem;
@@ -215,6 +222,3 @@
     max-width: 330px;
   }
 }
-
-
-
