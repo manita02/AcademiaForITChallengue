@@ -14,7 +14,7 @@ const Layout = ({ children }: Props) => {
           <a href="https://www.instagram.com/fundacionformar/?hl=es" className="me-3" target='blank'>
             <img src="/images/formar.png" alt="Formar Argentina Logo" className="navbar-logo" />
           </a>
-          <a href="https://forit.ar" target='blank'>
+          <a href="https://forit.ar" target='blank' className="hide-on-md">
             <img src="/images/forIT.png" alt="ForIT Logo" className="navbar-logo" />
           </a>
 
@@ -49,8 +49,8 @@ const Layout = ({ children }: Props) => {
       </main>
 
       <footer className="text-center text-white mt-auto fixed-bottom" id="custom-footer">
-        <div className="container p-2 pb-0">
-          <section className="mb-2">
+        <div className="container p-1 pb-0">
+          <section className="mb-1">
             <a
               className="btn social-btn"
               style={{ backgroundColor: '#110A26' }}
@@ -98,7 +98,7 @@ const Layout = ({ children }: Props) => {
         </div>
 
         <div
-          className="text-center p-2"
+          className="text-center p-1"
           style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}
         >
           <div className="fw-bold">© 2025 Academia ForIT</div>

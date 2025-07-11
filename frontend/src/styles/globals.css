@@ -1,3 +1,4 @@
+/* ------- Layout.tsx styles ------- */
 .hvr-underline-reveal {
   display: inline-block;
   vertical-align: middle;
@@ -60,7 +61,9 @@
 .navbar-logo {
   height: 32px;
 }
+/* ------- END Layout.tsx styles ------- */
 
+/* ------- TaskList.tsx styles ------- */
 .searchBarContainer {
   width: 100vw;
   background-image: url('/images/search-bar.jpeg');
@@ -110,7 +113,9 @@
     transform: translate(0);
   }
 }
+/* ------- END TaskList.tsx styles ------- */
 
+/* ------- TaskForm.tsx styles ------- */
 .formContainer {
   background-image: url('/images/form-bg.jpeg');
   background-size: cover;
@@ -161,6 +166,59 @@
 .form-content .form-check-label {
   color: #fff;
 }
+/* ------- END TaskForm.tsx styles ------- */
 
+/* ------- Responsive Styles ------- */
+@media (max-width: 440px) {
+  .task-title-glitch {
+    font-size: 2rem;
+  }
+}
 
+@media (max-width: 993px) {
+  .hide-on-md {
+    display: none !important;
+  }
+}
 
+@media (min-width: 576px) {
+  .search-input-group {
+    max-width: 400px !important;
+  }
+}
+
+@media (max-width: 577px) {
+  .search-input-group {
+    max-width: 400px !important;
+  }
+}
+
+@media (max-width: 400px) {
+  .search-input-group {
+    max-width: 240px !important;
+  }
+}
+
+@media (max-width: 632px) {
+  .form-content {
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 526px) {
+  .form-content {
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 414px) {
+  .form-content {
+    max-width: 350px;
+  }
+}
+
+@media (max-width: 345px) {
+  .form-content {
+    max-width: 330px;
+  }
+}

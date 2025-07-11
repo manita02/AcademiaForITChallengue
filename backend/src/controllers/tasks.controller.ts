@@ -55,7 +55,7 @@ export const updateTask: RequestHandler = async (req, res) => {
     where: { id },
     data: {
       title: title.toUpperCase(),
-      description: task.description,
+      description: description,
       completed: completed ?? task.completed
     }
   });
