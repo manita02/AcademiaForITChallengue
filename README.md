@@ -94,6 +94,23 @@ DATABASE_URL="file:./dev.db"
 PORT=3001
 ```
 
+#### Frontend
+
+Inside the `frontend` folder, create a `.env.local` file:
+
+```bash
+cd frontend
+touch .env.local
+```
+
+Add the following:
+
+```env
+NEXT_PUBLIC_API_URL=http://localhost:3001
+```
+
+> Note: This file tells the frontend where the backend API is running.
+
 ---
 
 ### 4. Prepare the database
@@ -142,6 +159,7 @@ This will start the frontend at:
 - Create new tasks
 - Update and delete existing tasks
 - Search for tasks by title
+- Responsive styling with Bootstrap
 
 ---
 
