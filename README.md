@@ -6,15 +6,13 @@
    </section>
 </section>
 
---- 
-
 Application built to participate in the Academia ForIT Challenge. The app is a task management system developed with Next.js on the frontend and Express + Prisma + SQLite3 on the backend. It allows you to easily create, search, update and delete tasks.
 
 ---
 
 ## Table of Contents
 
-1. [Technologies](#requirements)
+1. [Technologies](#technologies)
 2. [Prerequisites](#prerequisites)
 3. [Project installation](#project-installation)
 4. [Main features](#main-features)
@@ -26,15 +24,16 @@ Application built to participate in the Academia ForIT Challenge. The app is a t
 ## Technologies
 
 ### Backend
-- Node.js
-- Express
-- Prisma ORM
-- SQLite3
+
+| Node.js | Express | Prisma ORM | SQLite3 |
+|:--:|:--:|:--:|:--:|
+| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" width="60"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" width="60" style="background-color: white; padding: 4px; border-radius: 6px"/> | <img src="https://www.freelogovectors.net/wp-content/uploads/2022/01/prisma_logo-freelogovectors.net_.png" width="60"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" width="60"/> |
 
 ### Frontend
-- Next.js
-- React
-- Bootstrap 5
+
+| Next.js | React | Bootstrap 5 |
+|:--:|:--:|:--:|
+| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" width="60" style="background-color: white; padding: 4px; border-radius: 6px"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width="60"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" width="60"/> |
 
 ---
 
@@ -79,7 +78,7 @@ npm install
 
 ### 3. Set up the environment
 
-#### 📁 Backend
+#### Backend
 
 Inside the `backend` folder, create the `.env` file:
 
@@ -124,7 +123,7 @@ This will start the backend at:
 
 ---
 
-#### 🖥️ Frontend
+#### Frontend
 
 In another terminal:
 
@@ -154,7 +153,7 @@ This will start the frontend at:
 
 | Mobile View| Update Task |
 |:--:|:--:
-| <img src="./frontend/public/images/screenshots/mobile-home.png" width="200" height="300"/> | <img src="./frontend/public/images/screenshots/mobile-update-task.png" width="200" height="300"/> |
+| <img src="./frontend/public/images/screenshots/mobile-home.png" width="150" height="300"/> | <img src="./frontend/public/images/screenshots/mobile-update-task.png" width="150" height="300"/> |
 
 
 ## Author
