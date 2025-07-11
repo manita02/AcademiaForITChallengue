@@ -101,7 +101,7 @@ const TaskList: React.FC = () => {
           TASK MANAGER
         </h2>
         <div className="d-flex justify-content-center flex-wrap gap-2">
-          <div className="input-group" style={{ maxWidth: '400px', flexGrow: 1 }}>
+          <div className="input-group search-input-group" style={{ flexGrow: 1 }}>
             <input
               type="search"
               className="form-control"
